@@ -5,7 +5,7 @@ A [systemd](https://wiki.debian.org/systemd) unit to start a Blender netrender s
 ## How to use
 #### Create slave.blend
 1. Create a netrender slave named `slave.blend` with the settings you want (use the [Blender Netrender Additions](https://github.com/WARP-LAB/Blender-Network-Render-Additions) fork to render with GPU on slaves)
-1. Save the file to `/opt/netrender-startup` or another location of your choice.  If you change the location, you'll need to edit `WorkingDirectory` in the the unit file `netrender-slave.service`
+1. Save the file to `/opt/netrender-slave` or another location of your choice.  If you change the location, you'll need to edit `WorkingDirectory` in the the unit file `netrender-slave.service`
 
 #### Install the Systemd Unit
 1. Move to install dir:`cd /etc/systemd/system/`
