@@ -11,7 +11,7 @@ A [systemd](https://wiki.debian.org/systemd) unit to start a Blender netrender s
 1. Move to install dir:
 `cd /etc/systemd/system/`
 1. Download: 
-`sudo wget https://raw.githubusercontent.com/timberline-secondary/blender-netrender-slave-service/master/netrender-slave.service`
+`sudo wget https://raw.githubusercontent.com/timberline-secondary/blender-netrender-service/master/netrender-slave.service`
 1. Ensure it has correct permissions: 
 `sudo chmod 664 /etc/systemd/system/netrender-slave.service`
 1. Inform systemd of the new service: 
