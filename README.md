@@ -1,2 +1,2 @@
 # blender-netrender-slave-service
-A Systemd service to start a Blender netrender slave
+A [systemd](https://wiki.debian.org/systemd) unit to start a Blender netrender slave
