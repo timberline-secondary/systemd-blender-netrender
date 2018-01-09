@@ -14,4 +14,4 @@ A [systemd](https://wiki.debian.org/systemd) unit to start a Blender netrender s
 1. Inform systemd of the new service: `sudo systemctl daemon-reload`
 1. To start the service when the computer boots: `sudo systemctl enable netrender-slave`
 1. To start the service manually: `sudo systemctl start netrender-slave`
-1. To check the status or restart or stop the service, replace `start` with `status`, `restart`, or `stop` `
+1. To check the status or restart or stop the service, replace `start` with `status`, `restart`, or `stop`
