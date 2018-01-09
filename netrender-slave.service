@@ -8,9 +8,8 @@ After=network-online.target
 
 [Service]
 Type=simple
-WorkingDirectory=/opt/netrender-startup
-#User=hackerspace_admin
-ExecStart=/usr/bin/blender -b slaveGPU.blend --addons netrender -a -noaudio -nojoystick --enable-autoexec
+WorkingDirectory=/opt/netrender-slave
+ExecStart=/usr/bin/blender -b slave.blend --addons netrender -a -noaudio -nojoystick --enable-autoexec
 
 [Install]
 WantedBy=multi-user.target
