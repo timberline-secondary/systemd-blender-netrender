@@ -2,7 +2,7 @@
 
 [Unit]
 Description=Blender netrender slave manager
-Documentation=https://unix.stackexchange.com/a/408848/5132
+Documentation=https://github.com/timberline-secondary/blender-netrender-service
 Wants=network-online.target
 After=network-online.target
 
