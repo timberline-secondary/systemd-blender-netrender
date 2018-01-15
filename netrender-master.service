@@ -1,0 +1,16 @@
+# /etc/systemd/system/netrender-master.service
+
+[Unit]
+Description=Blender netrender master manager
+Documentation=https://github.com/timberline-secondary/blender-netrender-service
+Wants=network-online.target
+After=network-online.target
+Restart=always 
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/netrender-startup
+ExecStart=/usr/bin/blender -b master.blend --addons netrender -a -noaudio -nojo$
+
+[Install]
+WantedBy=multi-user.target
