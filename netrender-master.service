@@ -5,12 +5,12 @@ Description=Blender netrender master manager
 Documentation=https://github.com/timberline-secondary/blender-netrender-service
 Wants=network-online.target
 After=network-online.target
-Restart=on-failure 
 
 [Service]
 Type=simple
 WorkingDirectory=/opt/netrender-startup
 ExecStart=/usr/bin/blender -b master.blend --addons netrender -a -noaudio -nojo$
+Restart=on-failure 
 
 [Install]
 WantedBy=multi-user.target
