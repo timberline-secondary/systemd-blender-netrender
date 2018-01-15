@@ -5,7 +5,7 @@ Description=Blender netrender master manager
 Documentation=https://github.com/timberline-secondary/blender-netrender-service
 Wants=network-online.target
 After=network-online.target
-Restart=always 
+Restart=on-failure 
 
 [Service]
 Type=simple
