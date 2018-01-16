@@ -5,7 +5,7 @@ The goal of this repo is to allow a computer lab's currently unused computers to
 
 Here's the general process, if you imagine booting up a classroom computer lab in the morning:
 1. The Blender netrender master starts as a systemd service on whatever single server/workstation you want to be master.
-1. All other workstations run the service (netrender-monitor) which watches for the availability of the Master Monitor page on the local network.
+1. All other workstations run a service (netrender-monitor) that watches for the availability of the Master Monitor page on the local network.
 1. When the Master Monitor is detected, the slaves startup.
 1. The slave workstations also run a service (netrender-user-monitor) that monitors for users logging in to the workstation via GUI (an ssh connection won't trigger this)
 1. If a user logs in, the slave service stops.
