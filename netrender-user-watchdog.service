@@ -8,7 +8,7 @@ Before=netrender-slave.service
 
 [Service]
 Type=simple
-ExecStart=/bin/sh -c "while [ ! who | grep tty > /dev/null 2>&1 ]; then sleep 1; done; echo 'login detected'; exit 0"
+ExecStart=/bin/sh -c "while ! who | grep tty > /dev/null 2>&1; do sleep 1; done; echo 'login detected'; exit 1"
 Restart=always
 RestartSec=5
 
