@@ -3,14 +3,15 @@
 [Unit]
 Description=Blender netrender slave manager
 Documentation=https://github.com/timberline-secondary/blender-netrender-service
-Wants=network-online.target
-After=network-online.target
+BindsTo=netrender-user-watchdog.service
+After=netrender-user-watchdog.service
+
 
 [Service]
 Type=simple
-WorkingDirectory=/opt/netrender-slave
+WorkingDirectory=/usr/local/share/netrender
 ExecStart=/usr/bin/blender -b slave.blend --addons netrender -a -noaudio -nojoystick --enable-autoexec
 Restart=on-failure
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=netrender-user-watchdog.service
