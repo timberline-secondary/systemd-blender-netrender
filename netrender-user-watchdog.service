@@ -1,0 +1,16 @@
+# /etc/systemd/system/netrender-user-watchdog.service
+
+[Unit]
+Description=Watchdog for local user logins used to stop netrender slaves
+Documentation=https://github.com/timberline-secondary/blender-netrender-service
+Wants=netrender-slave.service
+Before=netrender-slave.service
+
+[Service]
+Type=simple
+ExecStart=/bin/sh -c "while [ ! who | grep tty > /dev/null 2>&1 ]; then sleep 1; done; echo 'login detected'; exit 0"
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
