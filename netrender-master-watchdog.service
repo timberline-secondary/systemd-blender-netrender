@@ -8,7 +8,7 @@ Before=netrender-slave.service
 
 [Service]
 Type=simple
-ExecStart=/bin/sh /usr/local/bin/netrender-master-watchdog.sh
+ExecStart=/bin/sh -c "while [ $(curl -sL -w "%{http_code}\\n" "http://192.168.43.107:8001/" -o /dev/null)  == "200" ] then sleep 1; done; echo 'Blender netrender master not accessible.'; exit 0" 
 Restart=always
 RestartSec=5
 
