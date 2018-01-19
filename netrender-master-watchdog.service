@@ -1,16 +1,16 @@
-# /etc/systemd/system/netrender-master-watchdog.service
+# /etc/systemd/system/netrender-watchdog.service
 
 [Unit]
-Description=Watchdog for netrender's master's monitor page on local network
+Description=A service that watches for conditions desired to start and stop a Blender netrender slave
 Documentation=https://github.com/timberline-secondary/blender-netrender-service
 Wants=netrender-slave.service
 Before=netrender-slave.service
 
 [Service]
 Type=simple
-ExecStart=/bin/sh -c "while [ $(curl -sL -w "%{http_code}\\n" "http://192.168.43.107:8001/" -o /dev/null)  == "200" ] then sleep 1; done; echo 'Blender netrender master not accessible.'; exit 0" 
+ExecStart=/bin/sh /usr/local/bin/netrender-watchdog.sh 192.168.0.#:8000
 Restart=always
-RestartSec=5
+RestartSec=30
 
 [Install]
 WantedBy=multi-user.target
