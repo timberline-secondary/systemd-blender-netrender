@@ -22,7 +22,7 @@ sudo chmod +x /usr/local/bin/netrender-watchdog.py
 2. Create a Blnder netrender slave, and save it to: `/usr/local/share/netrender/slave.blend` or download the one form this repo (for Blender 2.76, migth not work with newer versions of blender...)
 
 ````
-sudo mkdir /usr/local/share/netrender`
+sudo mkdir /usr/local/share/netrender
 sudo wget https://github.com/timberline-secondary/systemd-blender-netrender/blob/master/slave2.76.blend -N /usr/local/share/netrender/slave.blend
 ````
 
@@ -30,15 +30,21 @@ sudo wget https://github.com/timberline-secondary/systemd-blender-netrender/blob
 
 3.1 Download watchdog service
 
-````sudo wget https://github.com/timberline-secondary/systemd-blender-netrender/blob/master/netrender-watchdog.service -N /etc.systemd/system/````
+````
+sudo wget https://github.com/timberline-secondary/systemd-blender-netrender/blob/master/netrender-watchdog.service -N /etc.systemd/system/
+````
 
 3.2. Open the file and on this line, change the host to match your master:
 
-````ExecStart= /usr/bin/env python3 /usr/local/bin/netrender-watchdog.py --host IP_OR_HOSTNAME:PORT````
+````
+ExecStart= /usr/bin/env python3 /usr/local/bin/netrender-watchdog.py --host IP_OR_HOSTNAME:PORT
+````
 
 3.3 Download the slave service
 
-````sudo wget https://github.com/timberline-secondary/systemd-blender-netrender/blob/master/netrender-slave.service -N /etc.systemd/system/````
+````
+sudo wget https://github.com/timberline-secondary/systemd-blender-netrender/blob/master/netrender-slave.service -N /etc.systemd/system/
+````
 
 3.4 Enable the watchdog service to start on boot, and start it
 
