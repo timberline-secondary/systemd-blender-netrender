@@ -9,7 +9,7 @@ After=netrender-watchdog.service
 [Service]
 Type=simple
 WorkingDirectory=/usr/local/share/netrender
-ExecStart=/usr/bin/blender -b slave2.76.blend --addons netrender -a -noaudio -nojoystick --enable-autoexec
+ExecStart=/usr/bin/blender -b slave.blend --addons netrender -a -noaudio -nojoystick --enable-autoexec
 Restart=on-failure
 RestartSec=31
 
