@@ -31,7 +31,7 @@ sudo wget https://github.com/timberline-secondary/systemd-blender-netrender/blob
 3.1 Download watchdog service
 
 ````
-sudo wget https://github.com/timberline-secondary/systemd-blender-netrender/blob/master/netrender-watchdog.service -N /etc.systemd/system/
+sudo wget https://github.com/timberline-secondary/systemd-blender-netrender/blob/master/netrender-watchdog.service -N /etc/systemd/system/
 ````
 
 3.2. Open the file and on this line, change the host to match your master:
@@ -43,7 +43,7 @@ ExecStart= /usr/bin/env python3 /usr/local/bin/netrender-watchdog.py --host IP_O
 3.3 Download the slave service
 
 ````
-sudo wget https://github.com/timberline-secondary/systemd-blender-netrender/blob/master/netrender-slave.service -N /etc.systemd/system/
+sudo wget https://github.com/timberline-secondary/systemd-blender-netrender/blob/master/netrender-slave.service -N /etc/systemd/system/
 ````
 
 3.4 Enable the watchdog service to start on boot, and start it
