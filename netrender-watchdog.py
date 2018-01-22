@@ -40,10 +40,11 @@ def user_is_logged_in():
     """
     who = subprocess.run(['who'], stdout=subprocess.PIPE, universal_newlines=True)
     if who.stdout.find("tty") == -1:
+        return False
+    else:
         print("A user is logged in locally: {}".format(who.stdout))
         return True
-    else:
-        return False
+        
 
 if __name__ == "__main__":  # if this script is run form the command line
     parser = argparse.ArgumentParser()
