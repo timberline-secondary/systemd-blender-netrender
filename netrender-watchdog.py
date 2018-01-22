@@ -39,7 +39,7 @@ def user_is_logged_in():
     :return: True if a user is logged in locally.
     """
     who = subprocess.run(['who'], stdout=subprocess.PIPE, universal_newlines=True)
-    if who.stdout.find("tty"):
+    if who.stdout.find("tty") == -1:
         print("A user is logged in locally: {}".format(who.stdout))
         return True
     else:
